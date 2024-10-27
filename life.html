@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Things..</title>
 </head>
 <script
@@ -15,17 +15,22 @@
       $("#header").load("header.html"); 
       $("#footer").load("footer.html"); 
     });
+
+
+
+
+
 </script> 
 
 <div id="header"></div>
 <body>
     <div>
-    <p style="color:white">i enjoy coffee</p>
+    <p style="color:white">i enjoy coffe</p>
 
     <table id="skills" class="skills">
         <thead>
             <tr>
-                <th scope="col">languages</th>
+                <th scope="col">langauegs</th>
                 <th>usage</th>
                 <th>aquisition</th>
             </tr>
@@ -57,26 +62,114 @@
                 <td>ctf</td>
                 <td>assignment</td>
             </tr>
+            <tr>
+                <td>shel script</td>
+                <td>ctf and personal use</td>
+                <td>self learn</td>
+            </tr>
         </tbody>
     </table>   
 </div>
-    
-<div id="content">
-    <div><h2>A mark little me has left on the world...</h2></div>
-    <h3><u>CTF</u></h3>
-    <p><strong>What is a CTF: </strong> CTF stands for capture the flag, it's considered a computer exercise where players "capture" a flag, which is usually present as a line of text that looks something like FLAG{Y0u_g0T_m3}</p>
-    <p>International Battle of Hackers 2024 (local category)</p>
-    <p>Ive designed a small challenge within this website for people who are starting out, try to find the flag</p>
-    <p>Flag format: MIRE{}</p>
 
-    <p>Hint: Do you know about comments? </p>
 
-    <!--- MIRE{h1dd3n_1n_th3_c0mm3nts} -->
+
+<div id="CTF" class="collapsible">
+    <h3><u><strong>Capture The Flag (CTF)</strong></u></h3>
 </div>
 
+<!--DescriptionCTF-->
+<div id="collapse-content">    
+        <p><strong>What is a CTF: </strong> 
+            CTF stands for capture the flag, it's considered a computer exercise where players "capture" a flag, which is usually present as a line of text that looks something like FLAG{Y0u_g0T_m3}
+            Usually after a CTF, players would produce writeup which are basically documents of the challenge(s) they have solved.
+        </p>
+        <p>Ive designed a small challenge within this website for people who are starting out, try to find the flag</p>
+        <p>Flag format: MIRE{}</p> <!--- MIRE{h1dd3n_1n_th3_c0mm3nts} -->
+        <button type="button" id="hint1">I need a hint...</button><br><br>  
 
+<!--CTF1-->
+        <button type="button" class="collapsible">ICTF 2024</button>
+    <div class="collapse-content">
+        <p>
+            Date: 11th May 2024 <br>
+            My first ever live ctf competition 
+            Joined in absolutely <strong>NOT</strong> ready 
+            Holding on to dear, life with google and my kali linux that was setup like 2 days ago.  
+            This event always had a special place in my heart as it was my first live compeittion and the spark to everything 
+            <br>No writeups (i had no idea what a writeup was at that time)    
+        </p>
+    </div>    <br><br>
+
+<!--CTF2-->
+        <button type="button" class="collapsible">Blackhat MEA qulification</button>
+    <div class="collapse-content">
+        <p>
+            My first international ctf competition 
+            I thought i was ready, but I was <strong>NOT</strong> ready 
+            Holding on to life with google and my kali linux that was setup like 2 days ago.  
+            This event always had a special place in my heart as it was my first live compeittion and the spark to everything 
+            <br>No writeups (i had no idea what a writeup was at that time)    
+        </p>
+    </div>    <br><br> 
+
+
+<!--CTF3-->
+        <button type="button" class="collapsible">International Battle of Hackers 2024 (local category)</button>
+    <div class="collapse-content">
+        <p>
+            Fun competition, even though I only had half the time due to some incidents.<br>
+            Even though I only got 2, good learning experience. <br>
+            <a href="https://github.com/nightmire777/BloodFlame-Archive/tree/main/iboh">Writeup</a>
+        </p>
+    </div><br><br>  
+
+
+<!--CTF4-->
+        <button type="button" class="collapsible">3108 CTF</button>
+    <div class="collapse-content">
+        <p>
+            A very interesting CTF, aslo first time seeing one in malay. Cool!
+            Got quite a few questions, some were really simple, some required <strong>EXTREME</strong> creative thinking
+            learnt SO MUCH about php and all its funny quirks
+            <br>No writeup, but i fully understand why people hate php
+        </p>
+    </div>    <br><br>
+
+</div>
 
 </body>
+<script>   
+
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  var content = coll[i].nextElementSibling;
+  content.style.display = "none"; //hide content 
+
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "none") {
+      content.style.display = "block";
+    } else {
+      content.style.display = "none";
+    }
+  });
+}
+
+document.getElementById("events").addEventListener("click", function(event) {
+  event.preventDefault(); // Prevent the default link behavior
+  window.alert("You clicked the text!");
+});
+
+
+document.getElementById("hint1").addEventListener("click", function(){
+    window.alert("Do you know about the comments? \nPs.You might need a computer for this");
+});
+
+
+  </script>
 
 <div id="footer"></div>
 </html>
